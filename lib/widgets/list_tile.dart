@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class ListTileCheck extends StatelessWidget {
@@ -38,16 +39,23 @@ class ListTileCheck extends StatelessWidget {
                 style: TextStyle(color: Colors.grey[600], fontSize: 10),
               ),
               Checkbox(
-                activeColor: Colors.indigo,
-                value: isChecked,
-                onChanged: checkboxChange,
-              ),
+                  activeColor: Colors.indigo,
+                  value: isChecked,
+                  onChanged: (bool? newValue) {
+                    checkboxChange(newValue);
+                    newValue == true? play(): null;
+                  }),
             ],
           ),
         ],
       ),
       onLongPress: listTileDelete,
     );
+  }
+
+  void play() async {
+    final audioPlayer = AudioPlayer();
+    await audioPlayer.play(AssetSource('heloyagamel.mp3'));
   }
 }
 

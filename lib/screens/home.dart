@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hazaker/models/task_data.dart';
-import 'package:hazaker/screens/add_task.dart';
-import 'package:hazaker/widgets/tasks_container.dart';
+import 'package:taskaty/models/task_data.dart';
+import 'package:taskaty/widgets/add_button.dart';
+import 'package:taskaty/widgets/tasks_container.dart';
+import 'package:taskaty/widgets/timer_button.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
@@ -11,19 +12,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showModalBottomSheet(
-              isScrollControlled: true,
-              context: context,
-              builder: (context) => SingleChildScrollView(
-                  child: Container(
-                      padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom),
-                      child: AddTask((newTask) {}))));
-        },
-        backgroundColor: Colors.indigo[400],
-        child: Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          TimerButton(),
+          AddButton(),
+        ],
       ),
       backgroundColor: Colors.teal[400],
       body: SafeArea(
@@ -87,3 +82,4 @@ class Home extends StatelessWidget {
     );
   }
 }
+

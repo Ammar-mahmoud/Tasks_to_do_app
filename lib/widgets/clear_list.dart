@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hazaker/models/task_data.dart';
+import 'package:taskaty/models/task_data.dart';
 import 'package:provider/provider.dart';
 
 class ClearList extends StatelessWidget {
@@ -20,17 +20,17 @@ class ClearList extends StatelessWidget {
               context: context,
               builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('مسح الكل',textAlign: TextAlign.end, style: TextStyle(fontFamily: 'ElMessiri',),),
+            title: Text('مسح الكل',textAlign: TextAlign.end, style: TextStyle(fontFamily: 'ElMessiri',color: Colors.red),),
             content: Text('هل انت متأكد من مسح كل التاسكات؟', textAlign: TextAlign.end, style: TextStyle(fontFamily: 'ElMessiri',),),
             actions: [
               TextButton(
-                child: Text('Cancel', style: TextStyle(color: Colors.green),),
+                child: Text('متمسحش', style: TextStyle(fontSize: 16,color: Colors.green),),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
               ),
               TextButton(
-                child: Text('Confirm', style: TextStyle(color: Colors.red),),
+                child: Text('امسح', style: TextStyle(fontSize: 16,color: Colors.red),),
                 onPressed: () {
                   Provider.of<TaskData>(context, listen: false).removeTasks();
                   Navigator.of(context).pop();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hazaker/widgets/list_tile.dart';
+import 'package:taskaty/widgets/list_tile.dart';
 import 'package:provider/provider.dart';
 
 import '../models/task_data.dart';

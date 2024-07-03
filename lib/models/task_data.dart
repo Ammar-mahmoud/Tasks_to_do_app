@@ -1,13 +1,16 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:hazaker/models/task.dart';
+import 'package:taskaty/models/task.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 
 class TaskData extends ChangeNotifier {
   List<Task> tasks = [];
+  
 
   // Initialize shared preferences
   SharedPreferences? _prefs;
+
 
   TaskData() {
     _initPrefs();
@@ -64,6 +67,8 @@ class TaskData extends ChangeNotifier {
     _saveTasks();
     notifyListeners();
   }
+
+
 
   void updateTask(Task task) {
     task.doneChange();

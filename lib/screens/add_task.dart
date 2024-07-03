@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hazaker/models/task_data.dart';
+import 'package:taskaty/models/task_data.dart';
 import 'package:provider/provider.dart';
 
 class AddTask extends StatelessWidget {

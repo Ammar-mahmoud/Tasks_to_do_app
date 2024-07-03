@@ -24,7 +24,7 @@ class Task {
     );
   }
 
-  void doneChange() {
+  void doneChange()  {
     isDone = !isDone;
   }
 }
